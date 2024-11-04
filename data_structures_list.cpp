@@ -7,27 +7,18 @@
 // Set	            Stores unique elements. Not accessible by index.
 // Map	            Stores elements in "key/value" pairs. Accessible by keys (not by index).
 
-#include <vector>
+#include <list>
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-int main()
-{
-    vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
+int main(){
+list<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
 
-    for (string car : cars) {// iterate all list 
-        cout << car << "\n";
-    }
-cout << cars[1] << "\n";
-
-//other syntax :
-// vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
-
-// for (string car : cars) {
-//   cout << car << "\n";
-// }
+for (string car : cars) {
+  cout << car << "\n";
+}
 
 // Get the first element
 cout <<" Get the first element: "<< cars.front() << "\n";
@@ -35,34 +26,41 @@ cout <<" Get the first element: "<< cars.front() << "\n";
 // Get the last element
 cout <<" Get the last element: "<< cars.back() << "\n";
 
-// Try to access an element that does not exist (throws an error message)??? -> working like []
-//cout << cars.at(6);
+// Change the value of the last element
+cars.back() = "Toyota";
+// Get the last element
+cout <<" Get the last element: "<< cars.back() << "\n";
 
-//add element at the end of vector 
-cars.push_back("Tesla");
-  for (string car : cars) {// iterate all list 
-        cout << car << "\n";
-    }
+// Remove the first element
+cars.pop_front();
 
-//delete element at the end of vector 
+// Remove the last element
 cars.pop_back();
 
-//find size of vector
-cout << cars.size()<<"\n"; 
+// Add an element at the beginning
+cars.push_front("Tesla");
 
-//find if vector is empty
+// Add an element at the end
+cars.push_back("VW");
+
+//find if list is empty
 cout << cars.empty();  // Outputs 1 (The vector is empty)
 
-cars.push_back("Tesla");
-  for (string car : cars) {// iterate all list 
-        cout << car << "\n";
+for (string car : cars) {
+  cout << car << "\n";
+}
 
-    }
-cars.push_back("Tesla");
-  for (string car : cars) {// iterate all list 
-        cout << car << "\n";
-    }
+//inserting at index
 
 
-return 0 ;
+// initializing list iterator to beginning
+list<string>::iterator it = cars.begin();
+ advance(it, 2);
+ cars.insert(it, "honda");
+
+for (string car : cars) {
+  cout << car << "\n";
+}
+
+return 0;     
 }
