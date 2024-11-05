@@ -5,6 +5,7 @@ C++ Code testing and learning
 1. Namespace
 2. 4 pillars 
 3. Pointers & References 
+4. Interview questions 
 
 
 
@@ -284,3 +285,34 @@ int main() {
     return 0;
 }
 ```
+
+# Pure Virtuak function
+![alt text](image-1.png)
+```c++
+#include <iostream>
+using namespace std;
+
+class AbstractBase {
+public:
+    virtual void show() = 0; // Czysta funkcja wirtualna
+};
+
+class ConcreteDerived : public AbstractBase {
+public:
+    void show() override { // Implementacja czystej funkcji wirtualnej
+        cout << "ConcreteDerived class show function." << endl;
+    }
+};
+
+int main() {
+    // AbstractBase ab; // Błąd: nie można instancjonować klasy abstrakcyjnej
+    ConcreteDerived cd; // Możemy instancjonować klasę pochodną
+    cd.show();         // Wywołanie funkcji show
+    return 0;
+}
+```
+
+# Private vs Protected 
+![alt text](image-2.png)
+# Interview questions 
+
