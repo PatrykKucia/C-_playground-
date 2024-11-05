@@ -4,12 +4,8 @@ C++ Code testing and learning
 #  Table of contents
 1. Namespace
 2. 4 pillars 
-3. UART
-4. System clocking, RTC, watchdog
-5. Energy saving
-6. Interrupts & Error handling
-7. Timers,PWM, Enkoders 
-8. ADC,DMA,DAC
+3. Pointers & References 
+
 
 
 #  namespace
@@ -265,4 +261,26 @@ int main()
     return 0;
 }
 
+```
+
+
+# Pointers & References 
+- Pointers: A pointer is a variable that holds the memory address of another variable. A pointer needs to be dereferenced with the * operator to access the memory location it points to. 
+
+- References: A reference variable is an alias, that is, another name for an already existing variable. A reference, like a pointer, is also implemented by storing the address of an object. 
+A reference can be thought of as a constant pointer (not to be confused with a pointer to a constant value!) with automatic indirection, i.e., the compiler will apply the * operator for you. 
+
+usecase of reference
+
+```c++
+void increment(int &n) {
+    n++;
+}
+
+int main() {
+    int num = 10;
+    increment(num);
+    cout << "Incremented value: " << num << endl; // Output will be 11
+    return 0;
+}
 ```
