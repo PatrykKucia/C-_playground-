@@ -316,3 +316,13 @@ int main() {
 ![alt text](image-2.png)
 # Interview questions 
 
+# static in c and C++
+237
+
+There is a big difference between static functions in C and static member functions in C++. In C, a static function is not visible outside of its translation unit, which is the object file it is compiled into. In other words, making a function static limits its scope. You can think of a static function as being "private" to its *.c file (although that is not strictly correct).
+
+In C++, "static" can also apply to member functions and data members of classes. A static data member is also called a "class variable", while a non-static data member is an "instance variable". This is Smalltalk terminology. This means that there is only one copy of a static data member shared by all objects of a class, while each object has its own copy of a non-static data member. So a static data member is essentially a global variable, that is a member of a class.
+
+Non-static member functions can access all data members of the class: static and non-static. Static member functions can only operate on the static data members.
+
+One way to think about this is that in C++ static data members and static member functions do not belong to any object, but to the entire class.
